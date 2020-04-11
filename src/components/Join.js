@@ -2,8 +2,6 @@ import React from 'react'
 
 export default function Join() {
   return (
-    <div>
-
-    </div>
+    <h1>Join</h1>
   )
 }
