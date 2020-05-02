@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 import useInputState from "../hooks/useInputState";
 
 export default function Join() {
-  const [nickname, setNickname] = useInputState("");
+  const [name, setName] = useInputState("");
   const [room, setRoom] = useInputState("");
 
-  const handleLinkClick = (e) =>
-    !nickname || !room ? e.preventDefault() : null;
+  const handleLinkClick = (e) => (!name || !room ? e.preventDefault() : null);
 
   return (
     <main>
@@ -16,13 +15,13 @@ export default function Join() {
 
       <form onSubmit={(e) => e.preventDefault()}>
         <label>
-          Nickname
+          Name
           <input
             required
             type="text"
-            placeholder="Enter your nickname"
-            value={nickname}
-            onChange={setNickname}
+            placeholder="Enter your name"
+            value={name}
+            onChange={setName}
           />
         </label>
         <label>
@@ -36,10 +35,7 @@ export default function Join() {
           />
         </label>
 
-        <Link
-          onClick={handleLinkClick}
-          to={`/chat?nickname=${nickname}&room=${room}`}
-        >
+        <Link onClick={handleLinkClick} to={`/chat?name=${name}&room=${room}`}>
           <button type="submit">Join Chat</button>
         </Link>
       </form>
