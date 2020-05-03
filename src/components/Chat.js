@@ -14,6 +14,7 @@ let socket;
 export default function Chat({ location }) {
   const [messages, setMessages] = useState([]);
   const [message, setMessage, resetMessage] = useInputState("");
+  const [name, setName] = useState("");
 
   const endPoint = "http://127.0.0.1:3333";
 
@@ -25,7 +26,8 @@ export default function Chat({ location }) {
     socket = io(endPoint);
 
     socket.emit("join", { name, room }, (err) => {
-      if (err) console.log(err);
+      if (err) return console.log(err);
+      setName(name);
     });
 
     return () => {
@@ -65,7 +67,7 @@ export default function Chat({ location }) {
     <section>
       <h1>Chat</h1>
 
-      <DisplayMessages messages={messages} />
+      <DisplayMessages name={name} messages={messages} />
 
       <form onSubmit={handleSubmit}>
         <label>
