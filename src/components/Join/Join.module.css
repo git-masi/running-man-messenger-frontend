@@ -1,0 +1,13 @@
+.form {
+  margin: 0 auto;
+  padding: 2rem;
+  padding-bottom: 4rem;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--off-white);
+  border: 1px solid var(--dark-blue-gray);
+  border-radius: 5px;
+}

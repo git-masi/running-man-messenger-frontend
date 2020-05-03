@@ -15,7 +15,7 @@ export default function EmojiPicker(props) {
   const handleClick = () => setShowPicker(!showPicker);
 
   return (
-    <span onClick={handleClick} style={{ position: "relative" }}>
+    <div onClick={handleClick} className={styles.wrapper}>
       <Emoji emoji="smile" size={16} />
       <Picker
         style={{
@@ -26,6 +26,6 @@ export default function EmojiPicker(props) {
         }}
         onSelect={(emoji) => addEmoji(emoji)}
       />
-    </span>
+    </div>
   );
 }

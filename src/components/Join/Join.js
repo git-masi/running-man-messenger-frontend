@@ -15,10 +15,10 @@ export default function Join() {
   const handleLinkClick = (e) => (!name || !room ? e.preventDefault() : null);
 
   return (
-    <main>
+    <section>
       <h1>Join</h1>
 
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
         <label>
           Name
           <input
@@ -44,6 +44,6 @@ export default function Join() {
           <button type="submit">Join Chat</button>
         </Link>
       </form>
-    </main>
+    </section>
   );
 }

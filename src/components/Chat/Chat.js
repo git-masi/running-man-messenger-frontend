@@ -7,6 +7,7 @@ import qs from "qs";
 import useInputState from "../../hooks/useInputState";
 
 // Components
+import DisplayUsers from "../DisplayUsers/DisplayUsers";
 import DisplayMessages from "../DisplayMessages/DisplayMessages";
 import EmojiPicker from "../EmojiPicker/EmojiPicker";
 
@@ -68,18 +69,16 @@ export default function Chat({ location }) {
     e.target.querySelector('[name="newMessage"]').focus();
   };
 
-  const displayUsers = users.map((u) => <p key={u.id}>{u.name}</p>);
-
   return (
-    <section>
-      <h1>Chat</h1>
+    <section className={styles.section}>
+      <h1 className={styles.heading}>Chat</h1>
 
-      <div>{displayUsers}</div>
+      <DisplayUsers users={users} />
 
       <DisplayMessages name={name} messages={messages} />
 
-      <form onSubmit={handleSubmit}>
-        <label>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <label className={styles.label}>
           Message
           <input
             required

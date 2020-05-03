@@ -16,7 +16,7 @@ export default function DisplayMessages(props) {
     <p
       key={m.createdAt}
       className={
-        normalizeString(name) === normalizeString(m.name) ? "isUser" : null
+        normalizeString(name) === normalizeString(m.name) ? styles.isUser : null
       }
     >
       {m.name} &mdash; {m.text}
@@ -26,5 +26,9 @@ export default function DisplayMessages(props) {
     </p>
   ));
 
-  return <ScrollToBottom>{displayMessages}</ScrollToBottom>;
+  return (
+    <div className={styles.messages}>
+      <ScrollToBottom>{displayMessages}</ScrollToBottom>
+    </div>
+  );
 }

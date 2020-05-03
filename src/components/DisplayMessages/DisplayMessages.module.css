@@ -1,0 +1,7 @@
+.messages {
+  grid-area: messages;
+}
+
+.isUser {
+  text-align: right;
+}
