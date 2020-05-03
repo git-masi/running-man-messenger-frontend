@@ -8,12 +8,18 @@ import useInputState from "../hooks/useInputState";
 
 // Components
 import DisplayMessages from "./DisplayMessages/DisplayMessages";
+import EmojiPicker from "./EmojiPicker/EmojiPicker";
+
+// CSS
+import "emoji-mart/css/emoji-mart.css";
 
 let socket;
 
 export default function Chat({ location }) {
   const [messages, setMessages] = useState([]);
-  const [message, setMessage, resetMessage] = useInputState("");
+  const [message, setMessage, resetMessage, setMessageValue] = useInputState(
+    ""
+  );
   const [name, setName] = useState("");
   const [users, setUsers] = useState([]);
 
@@ -49,6 +55,10 @@ export default function Chat({ location }) {
     });
   }, []);
 
+  const addEmoji = (emoji) => {
+    setMessageValue((prevState) => `${prevState}${emoji.native}`);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     socket.emit("newMessage", message, (err) => {
@@ -80,6 +90,8 @@ export default function Chat({ location }) {
             onChange={setMessage}
           />
         </label>
+
+        <EmojiPicker addEmoji={addEmoji} />
 
         <button type="submit">Send</button>
       </form>
