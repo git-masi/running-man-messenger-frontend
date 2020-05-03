@@ -6,11 +6,14 @@ import qs from "qs";
 // Utils
 import useInputState from "../hooks/useInputState";
 
+// Components
+import DisplayMessages from "./DisplayMessages/DisplayMessages";
+
 let socket;
 
 export default function Chat({ location }) {
   const [messages, setMessages] = useState([]);
-  const [message, setMessage] = useInputState("");
+  const [message, setMessage, resetMessage] = useInputState("");
 
   const endPoint = "http://127.0.0.1:3333";
 
@@ -45,26 +48,24 @@ export default function Chat({ location }) {
 
   useEffect(() => {
     socket.on("message", (msg) => {
-      setMessages([...messages, msg]);
+      setMessages((prevState) => [...prevState, msg]);
     });
-  }, [messages]);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     socket.emit("newMessage", message, (err) => {
-      if (err) console.log(err);
+      if (err) return console.log(err);
+      resetMessage();
     });
+    e.target.querySelector('[name="newMessage"]').focus();
   };
-
-  const displayMessages = messages.map((m) => (
-    <li key={m.createdAt}>{m.text}</li>
-  ));
 
   return (
     <section>
       <h1>Chat</h1>
 
-      <ul>{displayMessages}</ul>
+      <DisplayMessages messages={messages} />
 
       <form onSubmit={handleSubmit}>
         <label>
@@ -72,6 +73,7 @@ export default function Chat({ location }) {
           <input
             required
             type="text"
+            name="newMessage"
             placeholder="Type your message"
             value={message}
             onChange={setMessage}
