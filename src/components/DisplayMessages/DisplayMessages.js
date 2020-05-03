@@ -1,6 +1,11 @@
+// Modules
 import React from "react";
 
+// Components
 import ScrollToBottom from "react-scroll-to-bottom";
+
+// CSS
+import styles from "./DisplayMessages.module.css";
 
 export default function DisplayMessages(props) {
   const { name, messages } = props;

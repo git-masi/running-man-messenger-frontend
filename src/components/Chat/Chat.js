@@ -4,14 +4,14 @@ import io from "socket.io-client";
 import qs from "qs";
 
 // Utils
-import useInputState from "../hooks/useInputState";
+import useInputState from "../../hooks/useInputState";
 
 // Components
-import DisplayMessages from "./DisplayMessages/DisplayMessages";
-import EmojiPicker from "./EmojiPicker/EmojiPicker";
+import DisplayMessages from "../DisplayMessages/DisplayMessages";
+import EmojiPicker from "../EmojiPicker/EmojiPicker";
 
 // CSS
-import "emoji-mart/css/emoji-mart.css";
+import styles from "./Chat.module.css";
 
 let socket;
 

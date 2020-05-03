@@ -1,7 +1,12 @@
+// Modules
 import React from "react";
 import { Link } from "react-router-dom";
 
-import useInputState from "../hooks/useInputState";
+// Hooks
+import useInputState from "../../hooks/useInputState";
+
+// CSS
+import styles from "./Join.module.css";
 
 export default function Join() {
   const [name, setName] = useInputState("");

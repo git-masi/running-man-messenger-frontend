@@ -3,6 +3,10 @@ import React, { useState } from "react";
 // Components
 import { Emoji, Picker } from "emoji-mart";
 
+// CSS
+import "emoji-mart/css/emoji-mart.css";
+import styles from "./EmojiPicker.module.css";
+
 export default function EmojiPicker(props) {
   const { addEmoji } = props;
 
