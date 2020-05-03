@@ -15,6 +15,7 @@ export default function Chat({ location }) {
   const [messages, setMessages] = useState([]);
   const [message, setMessage, resetMessage] = useInputState("");
   const [name, setName] = useState("");
+  const [users, setUsers] = useState([]);
 
   const endPoint = "http://127.0.0.1:3333";
 
@@ -42,6 +43,12 @@ export default function Chat({ location }) {
     });
   }, []);
 
+  useEffect(() => {
+    socket.on("roomData", ({ users }) => {
+      setUsers(users);
+    });
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     socket.emit("newMessage", message, (err) => {
@@ -51,9 +58,13 @@ export default function Chat({ location }) {
     e.target.querySelector('[name="newMessage"]').focus();
   };
 
+  const displayUsers = users.map((u) => <p key={u.id}>{u.name}</p>);
+
   return (
     <section>
       <h1>Chat</h1>
+
+      <div>{displayUsers}</div>
 
       <DisplayMessages name={name} messages={messages} />
 
