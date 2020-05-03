@@ -37,18 +37,6 @@ export default function Chat({ location }) {
   }, [location.search]);
 
   useEffect(() => {
-    socket.on("connectSucess", (msg) => {
-      console.log(msg.text);
-    });
-  }, []);
-
-  useEffect(() => {
-    socket.on("newUser", (msg) => {
-      console.log(msg.text);
-    });
-  }, []);
-
-  useEffect(() => {
     socket.on("message", (msg) => {
       setMessages((prevState) => [...prevState, msg]);
     });
