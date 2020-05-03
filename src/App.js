@@ -1,13 +1,13 @@
 // Packages
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Components
-import Join from './components/Join';
-import Chat from './components/Chat';
+import Join from "./components/Join/Join";
+import Chat from "./components/Chat/Chat";
 
 // CSS
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
