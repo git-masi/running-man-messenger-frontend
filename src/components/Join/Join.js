@@ -5,10 +5,14 @@ import { Link } from "react-router-dom";
 // Hooks
 import useInputState from "../../hooks/useInputState";
 
+// Components
+import Navbar from "../Navbar/Navbar";
+
 // CSS
 import styles from "./Join.module.css";
 
-export default function Join() {
+export default function Join(props) {
+  const { title } = props;
   const [name, setName] = useInputState("");
   const [room, setRoom] = useInputState("");
 
@@ -16,8 +20,9 @@ export default function Join() {
 
   return (
     <section className={styles.section}>
+      <Navbar title={title} />
+
       <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
-        <h3>Join</h3>
         <div>
           <img
             className={styles.logo}
