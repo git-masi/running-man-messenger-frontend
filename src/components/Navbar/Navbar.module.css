@@ -1,0 +1,33 @@
+.navbar {
+  padding: 10px;
+  height: var(--nav-height);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+
+  background-color: var(--dark-blue);
+}
+
+.navContent {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  color: var(--off-white);
+}
+
+.navContent > *:not(:last-child) {
+  margin-right: 15px;
+}
+
+.title {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.logo {
+  display: block;
+  height: 100%;
+  width: auto;
+}
