@@ -1,7 +1,27 @@
 .messages {
   grid-area: messages;
+  padding: 2rem;
+  background-color: var(--off-white);
+}
+
+.message {
+  margin-top: 1rem;
+  padding: 1rem;
+  width: fit-content;
+  color: var(--off-white);
+  background-color: var(--dark-green);
+  border-radius: 5px;
 }
 
 .isUser {
+  margin-right: 0;
+  margin-left: auto;
   text-align: right;
+  background-color: var(--dark-blue);
+}
+
+.timestamp {
+  margin-top: 1rem;
+  font-size: 12px;
+  display: block;
 }

@@ -1,3 +1,11 @@
+.section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .form {
   margin: 0 auto;
   padding: 2rem;
@@ -10,4 +18,10 @@
   background-color: var(--off-white);
   border: 1px solid var(--dark-blue-gray);
   border-radius: 5px;
+}
+
+.logo {
+  margin: 0 auto;
+  height: auto;
+  max-width: 40px;
 }

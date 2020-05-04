@@ -15,10 +15,17 @@ export default function Join() {
   const handleLinkClick = (e) => (!name || !room ? e.preventDefault() : null);
 
   return (
-    <section>
-      <h1>Join</h1>
-
+    <section className={styles.section}>
       <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+        <h3>Join</h3>
+        <div>
+          <img
+            className={styles.logo}
+            src="https://gitmasi.com/assets/running-man-logo/running-man-logo.png"
+            alt="logo"
+          />
+        </div>
+
         <label>
           Name
           <input

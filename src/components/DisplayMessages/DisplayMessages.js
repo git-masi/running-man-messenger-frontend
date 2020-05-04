@@ -16,13 +16,13 @@ export default function DisplayMessages(props) {
     <p
       key={m.createdAt}
       className={
-        normalizeString(name) === normalizeString(m.name) ? styles.isUser : null
+        normalizeString(name) === normalizeString(m.name)
+          ? [styles.isUser, styles.message].join(" ")
+          : styles.message
       }
     >
       {m.name} &mdash; {m.text}
-      <span style={{ fontSize: "12px", color: "#666", display: "block" }}>
-        {m.createdAt}
-      </span>
+      <span className={styles.timestamp}>{m.createdAt}</span>
     </p>
   ));
 

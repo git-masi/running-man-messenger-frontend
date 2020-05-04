@@ -10,7 +10,7 @@ export default function DisplayUsers(props) {
 
   return (
     <div className={styles.users}>
-      <h3>Users In Chat</h3>
+      <h3 className={styles.heading}>Users In Chat</h3>
       {displayUsers}
     </div>
   );

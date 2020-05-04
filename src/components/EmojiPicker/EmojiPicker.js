@@ -16,16 +16,15 @@ export default function EmojiPicker(props) {
 
   return (
     <div onClick={handleClick} className={styles.wrapper}>
-      <Emoji emoji="smile" size={16} />
-      <Picker
+      <Emoji emoji="smile" size={40} />
+      <span
+        className={styles.picker}
         style={{
-          position: "absolute",
-          bottom: "20px",
-          right: "20px",
           display: showPicker ? "block" : "none",
         }}
-        onSelect={(emoji) => addEmoji(emoji)}
-      />
+      >
+        <Picker onSelect={(emoji) => addEmoji(emoji)} />
+      </span>
     </div>
   );
 }

@@ -1,4 +1,19 @@
 .wrapper {
+  margin: 0 1rem;
+  padding: 10px;
+  padding-bottom: 5px;
+  flex: 0 0 60px;
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.picker {
+  position: absolute;
+  bottom: 110%;
+  right: 0;
+  z-index: 999;
 }

@@ -1,28 +1,47 @@
 .section {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas:
-    "heading heading heading heading"
-    "users messages messages messages"
-    "form form form form";
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .heading {
-  grid-area: heading;
+  flex: 0 0 auto;
+}
+
+.chatArea {
+  flex: 1 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 115px;
+  grid-template-areas:
+    "users messages messages messages"
+    "users form form form";
 }
 
 .form {
   grid-area: form;
 
-  padding: 1rem;
+  padding: 1rem 2rem;
   padding-bottom: 2rem;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
 
-  background-color: var(--off-white);
+  background-color: var(--light-gray);
 }
 
 .label {
-  display: inline-block;
+  margin: 0;
+  flex: 2 1 auto;
+}
+
+.label > input {
+  width: 100%;
+}
+
+.form > button[type="submit"] {
+  font-weight: bold;
+  text-transform: uppercase;
 }

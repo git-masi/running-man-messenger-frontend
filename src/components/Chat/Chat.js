@@ -73,27 +73,39 @@ export default function Chat({ location }) {
     <section className={styles.section}>
       <h1 className={styles.heading}>Chat</h1>
 
-      <DisplayUsers users={users} />
+      <div className={styles.chatArea}>
+        <DisplayUsers users={users} />
 
-      <DisplayMessages name={name} messages={messages} />
+        <DisplayMessages name={name} messages={messages} />
 
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <label className={styles.label}>
-          Message
-          <input
-            required
-            type="text"
-            name="newMessage"
-            placeholder="Type your message"
-            value={message}
-            onChange={setMessage}
-          />
-        </label>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <label className={styles.label}>
+            Message
+            <input
+              required
+              type="text"
+              name="newMessage"
+              placeholder="Type your message"
+              value={message}
+              onChange={setMessage}
+              onKeyPress={(e) =>
+                e.key === "Enter"
+                  ? e.target
+                      .closest("form")
+                      .querySelector("button[type='submit']")
+                      .click()
+                  : null
+              }
+            />
+          </label>
 
-        <EmojiPicker addEmoji={addEmoji} />
+          <EmojiPicker addEmoji={addEmoji} />
 
-        <button type="submit">Send</button>
-      </form>
+          <button type="submit" className="primary">
+            Send
+          </button>
+        </form>
+      </div>
     </section>
   );
 }
