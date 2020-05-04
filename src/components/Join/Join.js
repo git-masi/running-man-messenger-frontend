@@ -1,5 +1,5 @@
 // Modules
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 // Hooks
@@ -19,43 +19,47 @@ export default function Join(props) {
   const handleLinkClick = (e) => (!name || !room ? e.preventDefault() : null);
 
   return (
-    <section className={styles.section}>
+    <>
       <Navbar title={title} />
+      <section className={styles.section}>
+        <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+          <div>
+            <img
+              className={styles.logo}
+              src="https://gitmasi.com/assets/running-man-logo/running-man-logo.png"
+              alt="logo"
+            />
+          </div>
 
-      <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
-        <div>
-          <img
-            className={styles.logo}
-            src="https://gitmasi.com/assets/running-man-logo/running-man-logo.png"
-            alt="logo"
-          />
-        </div>
+          <label>
+            Name
+            <input
+              required
+              type="text"
+              placeholder="Enter your name"
+              value={name}
+              onChange={setName}
+            />
+          </label>
+          <label>
+            Room
+            <input
+              required
+              type="text"
+              placeholder="Enter the room you'd like to join"
+              value={room}
+              onChange={setRoom}
+            />
+          </label>
 
-        <label>
-          Name
-          <input
-            required
-            type="text"
-            placeholder="Enter your name"
-            value={name}
-            onChange={setName}
-          />
-        </label>
-        <label>
-          Room
-          <input
-            required
-            type="text"
-            placeholder="Enter the room you'd like to join"
-            value={room}
-            onChange={setRoom}
-          />
-        </label>
-
-        <Link onClick={handleLinkClick} to={`/chat?name=${name}&room=${room}`}>
-          <button type="submit">Join Chat</button>
-        </Link>
-      </form>
-    </section>
+          <Link
+            onClick={handleLinkClick}
+            to={`/chat?name=${name}&room=${room}`}
+          >
+            <button type="submit">Join Chat</button>
+          </Link>
+        </form>
+      </section>
+    </>
   );
 }
