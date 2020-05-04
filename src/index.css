@@ -15,6 +15,8 @@ html {
   --dark-blue: #2980b9;
   --green: #27ae60;
   --dark-green: #1f8b4c;
+
+  --nav-height: 60px;
 }
 
 * {
