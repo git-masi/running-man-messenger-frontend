@@ -12,8 +12,15 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <Route path="/" exact component={Join} />
-      <Route path="/chat" component={Chat} />
+      <Route
+        path="/"
+        exact
+        render={(props) => <Join {...props} title="Join" />}
+      />
+      <Route
+        path="/chat"
+        render={(props) => <Chat {...props} title="Chat" />}
+      />
     </Router>
   );
 }
