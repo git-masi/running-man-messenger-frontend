@@ -3,6 +3,9 @@
   height: var(--nav-height);
   width: 100%;
 
+  display: flex;
+  justify-content: space-between;
+
   background-color: var(--dark-blue);
 }
 
@@ -33,4 +36,29 @@
   display: block;
   height: 100%;
   width: auto;
+}
+
+.settingsButton {
+  padding: 0;
+  height: 100%;
+  width: 40px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navlink:link,
+.navlink:visited {
+  padding: 1rem 1.5rem;
+  background-color: var(--off-white);
+  border-radius: 5px;
+  font-weight: bolder;
+  color: var(--dark-blue);
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition: background-color 300ms;
+}
+
+.navlink:hover {
+  background-color: var(--light-gray);
 }
