@@ -10,13 +10,15 @@ import useInputState from "../../hooks/useInputState";
 import DisplayUsers from "../DisplayUsers/DisplayUsers";
 import DisplayMessages from "../DisplayMessages/DisplayMessages";
 import EmojiPicker from "../EmojiPicker/EmojiPicker";
+import Navbar from "../Navbar/Navbar";
 
 // CSS
 import styles from "./Chat.module.css";
 
 let socket;
 
-export default function Chat({ location }) {
+export default function Chat(props) {
+  const { location, title } = props;
   const [messages, setMessages] = useState([]);
   const [message, setMessage, resetMessage, setMessageValue] = useInputState(
     ""
@@ -71,7 +73,7 @@ export default function Chat({ location }) {
 
   return (
     <section className={styles.section}>
-      <h1 className={styles.heading}>Chat</h1>
+      <Navbar title={title} />
 
       <div className={styles.chatArea}>
         <DisplayUsers users={users} />
