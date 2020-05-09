@@ -73,6 +73,13 @@ a:visited {
   cursor: pointer;
 }
 
+p,
+li {
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  font-size: inherit;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
