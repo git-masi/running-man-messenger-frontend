@@ -1,5 +1,6 @@
 // Modules
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 // Components
 import ScrollToBottom from "react-scroll-to-bottom";
@@ -14,7 +15,7 @@ export default function DisplayMessages(props) {
 
   const displayMessages = messages.map((m) => (
     <p
-      key={m.createdAt}
+      key={uuidv4()}
       className={
         normalizeString(name) === normalizeString(m.name)
           ? [styles.isUser, styles.message].join(" ")
