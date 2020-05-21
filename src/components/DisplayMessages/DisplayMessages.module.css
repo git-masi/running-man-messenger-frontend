@@ -2,6 +2,8 @@
   grid-area: messages;
   padding: 2rem;
   background-color: var(--off-white);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .message {

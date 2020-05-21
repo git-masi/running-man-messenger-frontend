@@ -10,13 +10,14 @@
 }
 
 .chatArea {
+  height: calc(100% - var(--nav-height));
   flex: 1 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr 115px;
   grid-template-areas:
-    "users messages messages messages"
-    "users form form form";
+    'users messages messages messages messages'
+    'users form form form form';
 }
 
 .form {
@@ -41,7 +42,7 @@
   width: 100%;
 }
 
-.form > button[type="submit"] {
+.form > button[type='submit'] {
   font-weight: bold;
   text-transform: uppercase;
 }
