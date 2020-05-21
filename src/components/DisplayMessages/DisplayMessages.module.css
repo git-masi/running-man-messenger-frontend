@@ -4,6 +4,7 @@
   background-color: var(--off-white);
   overflow-y: scroll;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .message {
