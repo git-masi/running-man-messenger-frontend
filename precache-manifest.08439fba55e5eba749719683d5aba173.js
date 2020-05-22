@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "31642a9657346ce92a4964b41d5e4845",
+    "revision": "e0c4cd21fb8522ed95f8716179d32be2",
     "url": "/running-man-messenger-frontend/index.html"
   },
   {
