@@ -15,6 +15,7 @@
     "socket.io-client": "^2.3.0",
     "uuid": "^8.0.0"
   },
+  "homepage": "https://git-masi.github.io/running-man-messenger-frontend/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
