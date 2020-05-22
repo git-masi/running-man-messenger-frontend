@@ -28,11 +28,18 @@ export default function NavBar(props) {
       <div className={styles.navContent}>
         <NavLink
           className={styles.navlink}
+          to='/'
+          activeStyle={title === 'Join' ? activeStyles : null}
+        >
+          Join
+        </NavLink>
+        {/* <NavLink
+          className={styles.navlink}
           to='/signout'
           activeStyle={activeStyles}
         >
           Sign Out
-        </NavLink>
+        </NavLink> */}
         <NavLink
           className={styles.navlink}
           to='/about'
@@ -40,7 +47,7 @@ export default function NavBar(props) {
         >
           About
         </NavLink>
-        <button className={styles.settingsButton}>
+        {/* <button className={styles.settingsButton}>
           <object
             style={{ color: 'white' }}
             type='image/svg+xml'
@@ -50,7 +57,7 @@ export default function NavBar(props) {
           >
             settings
           </object>
-        </button>
+        </button> */}
       </div>
     </nav>
   );
