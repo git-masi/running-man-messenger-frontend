@@ -82,7 +82,7 @@ export default function Chat(props) {
 
         <form className={styles.form} onSubmit={handleSubmit}>
           <label className={styles.label}>
-            Message
+            <span hidden>Message</span>
             <input
               required
               type='text'

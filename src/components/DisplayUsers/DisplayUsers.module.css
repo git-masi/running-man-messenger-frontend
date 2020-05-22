@@ -2,6 +2,7 @@
   grid-area: users;
 
   padding: 1rem;
+  display: block;
 
   color: var(--off-white);
   background-color: var(--dark-blue-gray);
@@ -9,4 +10,10 @@
 
 .heading {
   margin: 2rem 0;
+}
+
+@media screen and (max-width: 599px) {
+  .users {
+    display: none;
+  }
 }

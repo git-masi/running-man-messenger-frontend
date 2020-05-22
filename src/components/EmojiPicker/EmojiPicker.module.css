@@ -17,3 +17,9 @@
   right: 0;
   z-index: 999;
 }
+
+@media screen and (max-width: 599px) {
+  .wrapper {
+    margin-left: 0;
+  }
+}
