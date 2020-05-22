@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/running-man-messenger-frontend/precache-manifest.ddcbbf7f2a395fe0e9ce14c5bf6c5ca5.js"
+  "/running-man-messenger-frontend/precache-manifest.37ade1d606afdcb5884acb554de295f2.js"
 );
 
 self.addEventListener('message', (event) => {

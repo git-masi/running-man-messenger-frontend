@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bc88ae4aafbaa58feb800505308c35fd",
+    "revision": "31642a9657346ce92a4964b41d5e4845",
     "url": "/running-man-messenger-frontend/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/running-man-messenger-frontend/static/css/2.c2bc211b.chunk.css"
   },
   {
-    "revision": "6509ee3bcb805687290a",
-    "url": "/running-man-messenger-frontend/static/css/main.73361734.chunk.css"
+    "revision": "8052232cbcfe3bc854e2",
+    "url": "/running-man-messenger-frontend/static/css/main.4daad090.chunk.css"
   },
   {
     "revision": "f2af0a7645c7fe01c1b1",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/running-man-messenger-frontend/static/js/2.85c1c19a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6509ee3bcb805687290a",
-    "url": "/running-man-messenger-frontend/static/js/main.29f467b9.chunk.js"
+    "revision": "8052232cbcfe3bc854e2",
+    "url": "/running-man-messenger-frontend/static/js/main.457e62d6.chunk.js"
   },
   {
     "revision": "a496850b7de252a4b871",
