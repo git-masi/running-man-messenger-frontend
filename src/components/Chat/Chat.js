@@ -26,7 +26,7 @@ export default function Chat(props) {
   const [name, setName] = useState('');
   const [users, setUsers] = useState([]);
 
-  const endPoint = 'http://127.0.0.1:3333';
+  const endPoint = 'https://running-man-messenger.herokuapp.com/';
 
   useEffect(() => {
     const { name, room } = qs.parse(location.search, {
