@@ -1,4 +1,5 @@
 .messages {
+  position: relative;
   grid-area: messages;
   padding: 2rem;
   background-color: var(--off-white);
@@ -35,4 +36,23 @@
   z-index: -1;
   width: 100%;
   height: 20px;
+}
+
+.newMessage {
+  visibility: visible;
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 99;
+
+  padding: 10px;
+
+  background-color: var(--off-white);
+  border: 1px solid var(--dark-blue-gray);
+  border-radius: 5px;
+  opacity: 0.8;
+}
+
+.newMessageHide {
+  visibility: hidden;
 }

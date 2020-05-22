@@ -9,6 +9,7 @@ export default function DisplayMessages(props) {
   const { name, messages } = props;
 
   const [userAtEndOfMessages, setUserAtEndOfMessages] = useState(true);
+  const [hideNewMessageElement, setHideNewMessageElement] = useState(true);
 
   const normalizeString = (str) => str.trim().toLowerCase();
 
@@ -20,6 +21,7 @@ export default function DisplayMessages(props) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setUserAtEndOfMessages(true);
+          setHideNewMessageElement(true);
         } else {
           setUserAtEndOfMessages(false);
         }
@@ -38,15 +40,26 @@ export default function DisplayMessages(props) {
   }, []);
 
   useEffect(() => {
+    let newIncomingMessage;
+    if (messages.length > 0 && messages[messages.length - 1].name !== name) {
+      newIncomingMessage = true;
+    }
+
     const el = messageContainer.current;
     const scrollHeight =
       el.scrollHeight; /** This number increases as new messages come in */
-    const clientHeight =
-      el.clientHeight; /** This number is stactic, based on height in browser */
 
-    if (scrollHeight - clientHeight && userAtEndOfMessages)
+    if (userAtEndOfMessages) {
       el.scrollTo(0, scrollHeight);
-  }, [messages, userAtEndOfMessages]);
+    } else if (newIncomingMessage) {
+      setHideNewMessageElement(false);
+    }
+
+    newIncomingMessage = false;
+
+    /** We don't care about anything but new messages, disable eslint here */
+    // eslint-disable-next-line
+  }, [messages]);
 
   const displayMessages = messages.map((m) => (
     <p
@@ -66,6 +79,13 @@ export default function DisplayMessages(props) {
     <div ref={messageContainer} className={styles.messages}>
       {displayMessages}
       <div ref={endOfMessages} className={styles.endOfMessages}></div>
+      <div
+        className={`${styles.newMessage} ${
+          hideNewMessageElement ? styles.newMessageHide : null
+        }`}
+      >
+        New Message
+      </div>
     </div>
   );
 }
