@@ -1,6 +1,6 @@
 // Packages
 import React from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Components
 import Join from './components/Join/Join';
@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router basename='/'>
+    <Router basename={process.env.PUBLIC_URL || '/'}>
       <Switch>
         <Route
           path='/about'
